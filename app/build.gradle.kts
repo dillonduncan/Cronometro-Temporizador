@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.cronometro"
-    compileSdk = 33
+    compileSdk = 34
     viewBinding.enable = true
     defaultConfig {
         applicationId = "com.example.cronometro"
