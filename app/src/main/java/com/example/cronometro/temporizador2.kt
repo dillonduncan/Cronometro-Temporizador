@@ -45,10 +45,8 @@ class temporizador2 : AppCompatActivity() {
     }
 
     fun iniciarTemporizador() {
-
         val milisegundos: Long =
             (binding.npHora.value * 3600000L) + (binding.npMinutos.value * 60000L) + (binding.npSegundos.value * 1000L)
-        Toast.makeText(this, "$milisegundos", Toast.LENGTH_SHORT).show()
         binding.btnIniciar.text = "Detener"
         binding.btnReiniciar.isEnabled = true
         timer = object : CountDownTimer(milisegundos, 1000) {
@@ -56,7 +54,6 @@ class temporizador2 : AppCompatActivity() {
                 hours = p0 / 3600000
                 minutes = (p0 % 3600000) / 60000
                 seconds = (p0 % 60000) / 1000
-                Toast.makeText(this@temporizador2, "$hours $minutes $seconds", Toast.LENGTH_SHORT).show()
                 binding.npHora.value = hours.toInt()
                 binding.npMinutos.value = minutes.toInt()
                 binding.npSegundos.value = seconds.toInt()
@@ -82,6 +79,7 @@ class temporizador2 : AppCompatActivity() {
         hours = 0
         minutes = 0
         seconds = 0
+        binding.btnIniciar.text = "Iniciar"
         binding.btnReiniciar.isEnabled = false
     }
 }
