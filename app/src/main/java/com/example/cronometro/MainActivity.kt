@@ -12,6 +12,6 @@ class MainActivity : AppCompatActivity() {
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnCronometro.setOnClickListener { startActivity(Intent(this,Cronometro_Activity::class.java)) }
-        binding.btnTemporizador.setOnClickListener { startActivity(Intent(this,Temporizador_Activity::class.java)) }
+        binding.btnTemporizador.setOnClickListener { startActivity(Intent(this,temporizador2::class.java)) }
     }
 }

@@ -28,9 +28,10 @@ class Temporizador_Activity : AppCompatActivity() {
     fun alarma() {
         mpAlarma = MediaPlayer.create(this, R.raw.alarma)
     }
-    fun sonarAlarma(){
+    fun sonarAlarma() {
         mpAlarma.start()
     }
+
     fun Temporizador() {
         try {
             var secods = 0
@@ -41,28 +42,22 @@ class Temporizador_Activity : AppCompatActivity() {
                     secods = binding.npSegundos.value
                     minutos = binding.npMinutos.value
                     horas = binding.npHora.value
-                    //  Toast.makeText(this@Temporizador_Activity, "$horas", Toast.LENGTH_SHORT).show()
-//                    if (horas>0){
-//                        horas--
-//                        binding.npHora.value=horas
-//                    }
-//                    if (minutos > 0 && secods > 58 || secods == 0) {
-//                        minutos--
-//                        binding.npMinutos.value = minutos
-//                    }
+                    Toast.makeText(this@Temporizador_Activity, "$horas", Toast.LENGTH_SHORT).show()
                     if (secods == 58 && minutos > 58 && horas > 0) {
+                        horas--
+                    }
+                    else if (horas>0 && minutos==0 && secods==0){
                         horas--
                     }
                     if (secods > 58) {
                         minutos--
+                        binding.npMinutos.value = minutos
                     }
-
                     if (horas < 0) {
                         horas = 0
                     }
                     secods--
                     binding.npSegundos.value = secods
-                    binding.npMinutos.value = minutos
                     binding.npHora.value = horas
 
 

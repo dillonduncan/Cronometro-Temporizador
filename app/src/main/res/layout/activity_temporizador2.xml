@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".temporizador2">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Horas"
+        android:textColor="#95FF0000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/npHora"
+        app:layout_constraintEnd_toEndOf="@+id/npHora"
+        app:layout_constraintStart_toStartOf="@+id/npHora" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/npHora"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="230dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:np_dividerColor="#1BF40000"
+        app:np_formatter="@string/number_picker_formatter"
+        app:np_height="180dp"
+        app:np_max="99"
+        app:np_min="0"
+        app:np_selectedTextColor="@color/rojo"
+        app:np_selectedTextSize="40sp"
+        app:np_textColor="@color/rojoPresed"
+        app:np_textSize="30sp"
+        app:np_value="0"
+        app:np_width="64dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="25dp"
+        android:text="Minutos"
+        android:textColor="#95FF0000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/npMinutos"
+        app:layout_constraintEnd_toEndOf="@+id/npMinutos"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/npMinutos" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/npMinutos"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="@+id/npHora"
+        app:layout_constraintEnd_toStartOf="@+id/npSegundos"
+        app:layout_constraintStart_toEndOf="@+id/npHora"
+        app:layout_constraintTop_toTopOf="@+id/npHora"
+        app:np_dividerColor="#1BF40000"
+        app:np_formatter="@string/number_picker_formatter"
+        app:np_height="180dp"
+        app:np_max="59"
+        app:np_min="0"
+        app:np_selectedTextColor="@color/rojo"
+        app:np_selectedTextSize="40sp"
+        app:np_textColor="@color/rojoPresed"
+        app:np_textSize="30sp"
+        app:np_value="0"
+        app:np_width="64dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Segundos"
+        android:textColor="#95FF0000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/npSegundos"
+        app:layout_constraintEnd_toEndOf="@+id/npSegundos"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="@+id/npSegundos" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/npSegundos"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/npMinutos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/npMinutos"
+        app:np_dividerColor="#1BF40000"
+        app:np_formatter="@string/number_picker_formatter"
+        app:np_height="180dp"
+        app:np_max="59"
+        app:np_min="0"
+        app:np_selectedTextColor="@color/rojo"
+        app:np_selectedTextSize="40sp"
+        app:np_textColor="@color/rojoPresed"
+        app:np_textSize="30sp"
+        app:np_value="0"
+        app:np_width="64dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=":"
+        android:textColor="@color/rojo"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@id/npHora"
+        app:layout_constraintLeft_toRightOf="@+id/npHora"
+        app:layout_constraintRight_toLeftOf="@id/npMinutos"
+        app:layout_constraintTop_toTopOf="@id/npHora"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="295dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=":"
+        android:textColor="@color/rojo"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@id/npMinutos"
+        app:layout_constraintLeft_toRightOf="@+id/npMinutos"
+        app:layout_constraintRight_toLeftOf="@id/npSegundos"
+        app:layout_constraintTop_toTopOf="@id/npMinutos"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="295dp" />
+
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:text="Iniciar"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.759"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btnReiniciar"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:text="Reiniciar"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

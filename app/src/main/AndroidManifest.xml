@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Cronometro"
         tools:targetApi="31">
         <activity
+            android:name=".temporizador2"
+            android:exported="false" />
+        <activity
+            android:name=".Temporizador2"
+            android:exported="false" />
+        <activity
             android:name=".Temporizador_Activity"
             android:exported="false" />
         <activity
