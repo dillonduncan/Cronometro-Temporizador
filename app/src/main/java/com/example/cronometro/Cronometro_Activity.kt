@@ -13,6 +13,7 @@ class Cronometro_Activity : AppCompatActivity() {
         binding = ActivityCronometroBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Timer()
+        binding.btnTemporizador.setOnClickListener { startActivity(Intent(this,temporizador2::class.java)) }
     }
 
     fun Timer() {

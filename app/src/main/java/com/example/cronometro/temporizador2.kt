@@ -1,5 +1,6 @@
 package com.example.cronometro
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -35,6 +36,7 @@ class temporizador2 : AppCompatActivity() {
                 pausarTemporizador()
             }
         }
+        binding.btnCronometro.setOnClickListener { startActivity(Intent(this,Cronometro_Activity::class.java)) }
         binding.btnReiniciar.setOnClickListener {
             reiniciarTemporizador()
         }
