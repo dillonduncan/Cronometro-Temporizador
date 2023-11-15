@@ -14,7 +14,7 @@
         android:layout_marginTop="200dp"
         android:gravity="center"
         android:hint="00:00.00"
-        android:textColor="@color/white"
+        android:textColor="@color/rojo"
         android:textColorHint="@color/white"
         android:textSize="50sp"
         app:layout_constraintLeft_toLeftOf="parent"
