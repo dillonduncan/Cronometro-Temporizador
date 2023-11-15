@@ -1,11 +1,15 @@
 package com.example.cronometro
 
 import android.media.MediaPlayer
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.cronometro.databinding.ActivityTemporizador2Binding
+import java.time.LocalDateTime
+import java.time.LocalTime
 import kotlin.math.min
 
 class temporizador2 : AppCompatActivity() {
@@ -15,6 +19,7 @@ class temporizador2 : AppCompatActivity() {
     var hours: Long = 0
     var minutes: Long = 0
     var seconds: Long = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTemporizador2Binding.inflate(layoutInflater)
@@ -23,7 +28,6 @@ class temporizador2 : AppCompatActivity() {
         binding.btnIniciar.setOnClickListener {
             if (binding.btnIniciar.text.equals("Iniciar")) {
                 iniciarTemporizador()
-                binding.btnIniciar.text = "Detener"
                 pausarAlarma()
             } else if (binding.btnIniciar.text.equals("Detener")) {
                 binding.btnIniciar.text = "Iniciar"
@@ -47,24 +51,27 @@ class temporizador2 : AppCompatActivity() {
     fun iniciarTemporizador() {
         val milisegundos: Long =
             (binding.npHora.value * 3600000L) + (binding.npMinutos.value * 60000L) + (binding.npSegundos.value * 1000L)
-        binding.btnIniciar.text = "Detener"
-        binding.btnReiniciar.isEnabled = true
-        timer = object : CountDownTimer(milisegundos, 1000) {
-            override fun onTick(p0: Long) {
-                hours = p0 / 3600000
-                minutes = (p0 % 3600000) / 60000
-                seconds = (p0 % 60000) / 1000
-                binding.npHora.value = hours.toInt()
-                binding.npMinutos.value = minutes.toInt()
-                binding.npSegundos.value = seconds.toInt()
-            }
 
-            override fun onFinish() {
-                pausarTemporizador()
-                sonarAlarma()
-                binding.btnReiniciar.isEnabled = false
-            }
-        }.start()
+        if (milisegundos > 0) {
+            binding.btnIniciar.text = "Detener"
+            binding.btnReiniciar.isEnabled = true
+            timer = object : CountDownTimer(milisegundos, 1000) {
+                override fun onTick(milisecons: Long) {
+                    hours = milisecons / 3600000
+                    minutes = (milisecons % 3600000) / 60000
+                    seconds = (milisecons % 60000) / 1000
+                    binding.npHora.value = hours.toInt()
+                    binding.npMinutos.value = minutes.toInt()
+                    binding.npSegundos.value = seconds.toInt()
+                }
+
+                override fun onFinish() {
+                    pausarTemporizador()
+                    sonarAlarma()
+                    binding.btnReiniciar.isEnabled = false
+                }
+            }.start()
+        }
     }
 
     fun pausarTemporizador() {
