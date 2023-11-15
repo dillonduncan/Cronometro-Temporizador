@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/black">
 
     <Button
         android:id="@+id/btnTemporizador"
+        style="@style/btn_style_dorado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
@@ -17,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        style="@style/btn_style_dorado"
         android:id="@+id/btnCronometro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

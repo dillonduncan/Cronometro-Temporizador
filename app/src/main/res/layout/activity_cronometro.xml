@@ -14,8 +14,8 @@
         android:layout_marginTop="200dp"
         android:gravity="center"
         android:hint="00 : 00 . 00"
-        android:textColor="@color/rojo"
-        android:textColorHint="@color/rojo"
+        android:textColor="@color/dorado"
+        android:textColorHint="@color/dorado"
         android:textSize="50sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -23,7 +23,7 @@
 
     <Button
         android:id="@+id/btnStar_Stop"
-        style="@style/btn_style_blue"
+        style="@style/btn_style_dorado"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="370dp"
